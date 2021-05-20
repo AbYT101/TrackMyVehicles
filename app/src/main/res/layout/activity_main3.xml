@@ -7,7 +7,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.supreme.ab.currentlocationdemoo.Main3Activity"
+    tools:context="com.supreme.ab.currentlocationdemoo.MainActivity"
     android:background="@color/graylight"
     android:orientation="vertical">
     <RelativeLayout

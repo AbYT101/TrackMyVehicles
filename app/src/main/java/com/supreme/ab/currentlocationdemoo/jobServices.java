@@ -5,7 +5,6 @@ import android.app.job.JobService;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.text.Html;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -21,7 +20,6 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
-import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -47,7 +45,7 @@ public class jobServices extends JobService {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                //Get Location
+
                 getLocation(params);
 
                 Log.d(TAG, "Job Finished");
@@ -99,9 +97,6 @@ public class jobServices extends JobService {
         });
     }
     private void saveLocation(){
-//       if (Longitude.isEmpty()|| Latitude.isEmpty() || CountryName.isEmpty()|| Locality.isEmpty() || AddressLine.isEmpty()){ return;}
-
-        //Build data for address
         Map<String, Object> dataToSave= new HashMap<String,Object>();
 
         dataToSave.put("Country", CountryName);
@@ -113,6 +108,7 @@ public class jobServices extends JobService {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         String currenttime= formatter.format(date);
+
         //Save data of address
         ref = FirebaseFirestore.getInstance().collection("Vehicle1 Location").document(currenttime);
         ref.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {

@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.supreme.ab.currentlocationdemoo", appContext.getPackageName());
+        assertEquals("com.supreme.ab.TrackMyVehichle", appContext.getPackageName());
     }
 }
